@@ -1,1 +1,63 @@
 
+{
+  "name": "mute",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "eAPtp",
+  "actions": [
+    {
+      "title": "Coming Soon!",
+      "author": "",
+      "color": "${serverVars(\"Bright Baby Blue\")}",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "https://cdn.discordapp.com/attachments/565915469983383582/576434584590352384/admin-ajax.png",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "Embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "Embed",
+      "message": "This command is currently in development. It will be done soon!",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "Embed",
+      "message": "Infinity Services™",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "Embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "1",
+      "varName3": "Embed MESSAGE",
+      "name": "Send Embed Message"
+    },
+    {
+      "time": "5",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "Embed MESSAGE",
+      "name": "Delete Message"
+    }
+  ]
+}
+
