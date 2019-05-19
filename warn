@@ -1,20 +1,84 @@
 
 {
-  "name": "mute",
+  "name": "warn",
   "permissions": "NONE",
   "restriction": "1",
-  "_id": "eAPtp",
+  "_id": "KfXOx",
   "actions": [
     {
-      "title": "Coming Soon!",
+      "comment": "Setup",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "Reason",
+      "name": "Store Command Params"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "BAN_MEMBERS",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "32",
+      "name": "Check Member Permissions"
+    },
+    {
+      "condition": "0",
+      "comparison": "1",
+      "value": "2",
+      "iftrue": "2",
+      "iftrueVal": "26",
+      "iffalse": "0",
+      "iffalseVal": "25",
+      "name": "Check Parameters"
+    },
+    {
+      "condition": "1",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "26",
+      "name": "Check Parameters"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "Victim Username",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "User Username",
+      "name": "Store Member Info"
+    },
+    {
+      "title": "User Warned",
       "author": "",
       "color": "${serverVars(\"Bright Baby Blue\")}",
       "url": "",
       "authorIcon": "",
       "authorUrl": "",
       "imageUrl": "",
-      "thumbUrl": "https://cdn.discordapp.com/attachments/565915469983383582/576434584590352384/admin-ajax.png",
+      "thumbUrl": "",
       "timestamp": "false",
+      "debug": "false",
       "text": "",
       "year": "",
       "month": "",
@@ -23,29 +87,183 @@
       "minute": "",
       "second": "",
       "storage": "1",
-      "varName": "Embed",
+      "varName": "Warn Embed",
       "name": "Create Embed Message"
     },
     {
+      "title": "",
+      "author": "${tempVars(\"Victim Username\")} was warned by ${tempVars(\"User Username\")}",
+      "color": "${serverVars(\"Bright Baby Blue\")}",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
       "storage": "1",
-      "varName": "Embed",
-      "message": "This command is currently in development. It will be done soon!",
+      "varName": "Log",
+      "name": "Create Embed Message"
+    },
+    {
+      "comment": "Main",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "dataName": "Warning Count",
+      "changeType": "1",
+      "value": "1",
+      "name": "Control Member Data"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "dataName": "Warning Count",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "Warning-Count-Number",
+      "name": "Store Member Data"
+    },
+    {
+      "storage": "1",
+      "varName": "Reasons List",
+      "name": "Create List"
+    },
+    {
+      "storage": "1",
+      "varName": "Reasons List",
+      "addType": "0",
+      "position": "",
+      "value": "tempVars(\"Reason\")",
+      "name": "Add Item to List"
+    },
+    {
+      "list": "7",
+      "varName": "Reasons List",
+      "start": "",
+      "middle": "",
+      "end": "\\n",
+      "storage": "1",
+      "varName2": "Reasons List Txt",
+      "sort": "1",
+      "name": "Convert List to Text"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "dataName": "Warn Reasons",
+      "defaultVal": "\"\"",
+      "storage": "1",
+      "varName2": "Reasons",
+      "name": "Store Member Data"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "dataName": "Warn Reasons",
+      "changeType": "1",
+      "value": "tempVars(\"Reasons List Txt\")",
+      "name": "Control Member Data"
+    },
+    {
+      "storage": "1",
+      "varName": "Warn Embed",
+      "message": "**${tempVars(\"Victim Username\")}** has been warned and now has **${tempVars(\"Warning-Count-Number\")}** warning(s).",
       "name": "Set Embed Description"
     },
     {
       "storage": "1",
-      "varName": "Embed",
-      "message": "Infinity Services™",
-      "footerIcon": "",
-      "name": "Set Embed Footer"
+      "varName": "Warn Embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
     },
     {
       "storage": "1",
-      "varName": "Embed",
+      "varName": "Log",
+      "fieldName": "Reason",
+      "message": "${tempVars(\"Reason\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "Log",
+      "fieldName": "Amount of Warnings",
+      "message": "${tempVars(\"Warning-Count-Number\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "Log",
+      "channel": "6",
+      "varName2": "Infinity Logs Channel",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "Errors",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "title": "Incorrect Format",
+      "author": "",
+      "color": "${serverVars(\"Bright Baby Blue\")}",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "Error Embed 1 ",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "Error Embed 1 ",
+      "message": "**Correct Format:** ``-warn [@user] [Reason``",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "Error Embed 1 ",
       "channel": "0",
       "varName2": "",
       "storage3": "1",
-      "varName3": "Embed MESSAGE",
+      "varName3": "Error Message 1",
+      "iffalse": "0",
+      "iffalseVal": "",
       "name": "Send Embed Message"
     },
     {
@@ -55,9 +273,64 @@
     },
     {
       "storage": "1",
-      "varName": "Embed MESSAGE",
+      "varName": "Error Message 1",
       "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "title": "Invalid Permissions",
+      "author": "",
+      "color": "${serverVars(\"Bright Baby Blue\")}",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "Error Embed 2",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "Error Embed 2",
+      "message": "This command requires the permission ``BAN MEMBERS``.",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "Error Embed 2",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "1",
+      "varName3": "Erro Message 2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "time": "5",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "Erro Message 2",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
     }
-  ]
+  ],
+  "comType": "0"
 }
-
