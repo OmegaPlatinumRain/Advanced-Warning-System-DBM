@@ -1,1 +1,229 @@
 
+{
+  "name": "warnings",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "mCgIB",
+  "actions": [
+    {
+      "comment": "Setup",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "BAN_MEMBERS",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "21",
+      "name": "Check Member Permissions"
+    },
+    {
+      "condition": "1",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "15",
+      "name": "Check Parameters"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "dataName": "Warning Count",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "Total Warnings",
+      "name": "Store Member Data"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "dataName": "Warn Reasons",
+      "defaultVal": "\"\"",
+      "storage": "1",
+      "varName2": "Reasons",
+      "name": "Store Member Data"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "Username",
+      "name": "Store Member Info"
+    },
+    {
+      "title": "",
+      "author": "${tempVars(\"Username\")}'s warnings",
+      "color": "${serverVars(\"Bright Baby Blue\")}",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "Warnings embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "comment": "Main",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "storage": "1",
+      "varName": "Warnings embed",
+      "fieldName": "Total Warnings",
+      "message": "**${tempVars(\"Total Warnings\")}**",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "Warnings embed",
+      "fieldName": "Warning Reasons",
+      "message": "**${tempVars(\"Reasons\")}**",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "Warnings embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "Errors",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "title": "Incorrect Format",
+      "author": "",
+      "color": "${tempVars(\"Warnings embed\")}",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "Error embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "Error embed",
+      "message": "**Correct format:** ``-warnings [@user]``",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "Error embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "1",
+      "varName3": "Erro Msg",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "time": "5",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "Erro Msg",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "title": "Error",
+      "author": "",
+      "color": "${serverVars(\"Bright Baby Blue\")}",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "Error embed 2",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "Error embed 2",
+      "message": "This command requires the permssion ``BAN MEMBERS``.",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "Error embed 2",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "1",
+      "varName3": "Erro msg 2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "time": "5",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "Erro msg 2",
+      "name": "Delete Message"
+    }
+  ]
+}
+
